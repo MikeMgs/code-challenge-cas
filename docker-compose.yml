@@ -20,5 +20,13 @@ services:
       RAILS_ENV: development
       RAILS_MAX_THREADS: 5
       BUNDLE_PATH: /bundle
+    networks:
+      static-network:
+        ipv4_address: 172.20.128.2
     ports:
       - "3000:3000"
+networks:
+  static-network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
