@@ -31,7 +31,7 @@ function UploadVideo() {
     const headers = { 'Content-Type': 'multipart/form-data' };
 
     axios
-      .post('http://localhost:4000/videos', formData, { headers })
+      .post(`${appUrl}/videos`, formData, { headers })
       .then((data) => {
         setError(false);
         setResponseMessage(data.message);

@@ -8,6 +8,9 @@ services:
       MYSQL_ROOT_PASSWORD: awesomepassword123
     ports:
       - "3306:3306"
+    networks:
+      static-network:
+        ipv4_address: 172.20.0.3
   web:
     build: ./
     depends_on: [db]
@@ -22,11 +25,11 @@ services:
       BUNDLE_PATH: /bundle
     networks:
       static-network:
-        ipv4_address: 172.20.128.2
+        ipv4_address: 172.20.0.2
     ports:
       - "3000:3000"
 networks:
   static-network:
     ipam:
       config:
-        - subnet: 172.20.0.0/16
+        - subnet: 172.20.0.0/24
