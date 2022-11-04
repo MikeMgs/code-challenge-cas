@@ -1,0 +1,39 @@
+.upload-video {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  form {
+    display: flex;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border: 1px solid #e8e8e8;
+    padding: 52px 8px;
+    width: 350px;
+
+    & > div {
+      margin-bottom: 8px;
+      height: 30px;
+
+      label > * {
+        margin-left: 8px;
+      }
+    }
+
+    .message {
+      font-size: 13px;
+      margin-top: 8px;
+
+      &.error {
+        color: #ff3333;
+      }
+    }
+  }
+}
